@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Books</h2>
+        <h2>Your current reading list:</h2>
         <nav v-bind:class="[{ hidden: pagination.last_page > 1 }]" aria-label="Page navigation example">
             <ul class="pagination">
                 <li v-bind:class="[{ disabled: !pagination.prev_page_url }]" 

@@ -47319,7 +47319,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h2", [_vm._v("Books")]),
+      _c("h2", [_vm._v("Your current reading list:")]),
       _vm._v(" "),
       _c(
         "nav",
@@ -47469,7 +47469,7 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "container" }, [
           _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-            _vm._v("BookWorm")
+            _c("h1", [_vm._v("Welcome to BookWorm")])
           ])
         ])
       ]
