@@ -10,7 +10,9 @@
                 </li>
 
                 <li class="page-item disabled" >
-                    <a class="page-link text-dark" href="#"></a>
+                    <a class="page-link text-dark" href="#">
+                        Page {{ pagination.current_page }} of {{ pagination.last_page }}
+                    </a>
                 </li>    
 
                 <li  v-bind:class="[{ disabled: !pagination.next_page_url }]" class="page-item">
@@ -24,6 +26,8 @@
             <h3>{{book.title}}</h3>
             <h5>By: {{book.author}}</h5>
             <p>Published: {{book.pub_date}}</p>
+            <hr>
+            <button @click="deleteBook(book.id)" class="btn btn-danger">Delete</button>
         </div>
     </div>
 </template>
@@ -60,9 +64,7 @@
                         this.books = res.data;
                         globContext.makePagination(res.meta, res.links);
                     })
-                    .catch(error => {
-                        console.log(error)
-                    })
+                    .catch(error => console.log(error))
             },
 
             makePagination(meta, links) {
@@ -75,7 +77,19 @@
                 }
 
                 this.pagination = pagination;
-            }  
+            },
+            
+            deleteBook(id) {
+                if(confirm('Are you sure you want to remove this book?')) {
+                    fetch(`api/book/${id}`, {method: 'delete'})
+                        .then(response => response.json())
+                        .then(data => {
+                            alert('Removed book from your list');
+                            this.fetchBooks();
+                        })
+                        .catch(error => console.log(error))
+                }
+            }
         }
     };
 </script>

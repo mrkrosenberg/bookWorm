@@ -47352,7 +47352,21 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _vm._m(0),
+            _c("li", { staticClass: "page-item disabled" }, [
+              _c(
+                "a",
+                { staticClass: "page-link text-dark", attrs: { href: "#" } },
+                [
+                  _vm._v(
+                    "\n                    Page " +
+                      _vm._s(_vm.pagination.current_page) +
+                      " of " +
+                      _vm._s(_vm.pagination.last_page) +
+                      "\n                "
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c(
               "li",
@@ -47386,23 +47400,29 @@ var render = function() {
           _vm._v(" "),
           _c("h5", [_vm._v("By: " + _vm._s(book.author))]),
           _vm._v(" "),
-          _c("p", [_vm._v("Published: " + _vm._s(book.pub_date))])
+          _c("p", [_vm._v("Published: " + _vm._s(book.pub_date))]),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-danger",
+              on: {
+                click: function($event) {
+                  _vm.deleteBook(book.id)
+                }
+              }
+            },
+            [_vm._v("Delete")]
+          )
         ])
       })
     ],
     2
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "page-item disabled" }, [
-      _c("a", { staticClass: "page-link text-dark", attrs: { href: "#" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -47532,6 +47552,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47566,7 +47590,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.books = res.data;
                 globContext.makePagination(res.meta, res.links);
             }).catch(function (error) {
-                console.log(error);
+                return console.log(error);
             });
         },
         makePagination: function makePagination(meta, links) {
@@ -47579,6 +47603,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             };
 
             this.pagination = pagination;
+        },
+        deleteBook: function deleteBook(id) {
+            var _this2 = this;
+
+            if (confirm('Are you sure you want to remove this book?')) {
+                fetch('api/book/' + id, { method: 'delete' }).then(function (response) {
+                    return response.json();
+                }).then(function (data) {
+                    alert('Removed book from your list');
+                    _this2.fetchBooks();
+                }).catch(function (error) {
+                    return console.log(error);
+                });
+            }
         }
     }
 });
