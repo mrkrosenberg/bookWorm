@@ -47322,7 +47322,7 @@ var render = function() {
       _c("h2", [_vm._v("Books")]),
       _vm._v(" "),
       _vm._l(_vm.books, function(book) {
-        return _c("div", { key: book.id, staticClass: "card card-body" }, [
+        return _c("div", { key: book.id, staticClass: "card card-body mb-3" }, [
           _c("h3", [_vm._v(_vm._s(book.title))]),
           _vm._v(" "),
           _c("h5", [_vm._v("By: " + _vm._s(book.author))]),
