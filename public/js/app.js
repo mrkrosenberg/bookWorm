@@ -47469,7 +47469,7 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "container" }, [
           _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-            _c("h1", [_vm._v("Welcome to BookWorm")])
+            _vm._v("BookWorm")
           ])
         ])
       ]
