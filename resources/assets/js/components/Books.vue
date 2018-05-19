@@ -3,13 +3,21 @@
         <h2>Your current reading list:</h2>
         <nav v-bind:class="[{ hidden: pagination.last_page > 1 }]" aria-label="Page navigation example">
             <ul class="pagination">
-                <li v-bind:class="[{ disabled: !pagination.prev_page_url }]" 
-                    class="page-item"><a class="page-link" href="#"
-                    @click="fetchBooks(pagination.prev_page_url)">Previous</a></li>
+                <li v-bind:class="[{ disabled: !pagination.prev_page_url }]" class="page-item">
+                    <a class="page-link" href="#" @click="fetchBooks(pagination.prev_page_url)">
+                        Previous
+                    </a>
+                </li>
 
-                <li  v-bind:class="[{ disabled: !pagination.next_page_url }]"
-                     class="page-item"><a class="page-link" href="#"
-                     @click="fetchBooks(pagination.next_page_url)">Next</a></li>
+                <li class="page-item disabled" >
+                    <a class="page-link text-dark" href="#"></a>
+                </li>    
+
+                <li  v-bind:class="[{ disabled: !pagination.next_page_url }]" class="page-item">
+                    <a class="page-link" href="#" @click="fetchBooks(pagination.next_page_url)">
+                        Next
+                     </a>
+                </li>
             </ul>
         </nav>
         <div class="card card-body mb-3" v-for="book in books" v-bind:key="book.id">

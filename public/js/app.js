@@ -47347,10 +47347,12 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Previous")]
+                  [_vm._v("\n                    Previous\n                ")]
                 )
               ]
             ),
+            _vm._v(" "),
+            _vm._m(0),
             _vm._v(" "),
             _c(
               "li",
@@ -47370,7 +47372,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Next")]
+                  [_vm._v("\n                    Next\n                 ")]
                 )
               ]
             )
@@ -47391,7 +47393,16 @@ var render = function() {
     2
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "page-item disabled" }, [
+      _c("a", { staticClass: "page-link text-dark", attrs: { href: "#" } })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -47491,6 +47502,14 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
