@@ -20,6 +20,7 @@
     <body>
         <div id="app">
             <h1>Welcome to BookWorm, ya filthy animal</h1>
+            <navbar></navbar>
             <div class="container">
                 <books></books>
             </div>

@@ -13879,6 +13879,7 @@ __webpack_require__(13);
 window.Vue = __webpack_require__(36);
 
 Vue.component('books', __webpack_require__(50));
+Vue.component('navbar', __webpack_require__(52));
 
 var app = new Vue({
     el: '#app'
@@ -47267,7 +47268,7 @@ module.exports = function normalizeComponent (
 var disposed = false
 var normalizeComponent = __webpack_require__(40)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(54)
 /* template */
 var __vue_template__ = __webpack_require__(51)
 /* template functional */
@@ -47315,16 +47316,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    [
+      _c("h2", [_vm._v("Books")]),
+      _vm._v(" "),
+      _vm._l(_vm.books, function(book) {
+        return _c("div", { key: book.id, staticClass: "card card-body" }, [
+          _c("h3", [_vm._v(_vm._s(book.title))]),
+          _vm._v(" "),
+          _c("h4", [_vm._v("By: " + _vm._s(book.author))]),
+          _vm._v(" "),
+          _c("p", [_vm._v("Published: " + _vm._s(book.pub_date))])
+        ])
+      })
+    ],
+    2
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h2", [_vm._v("Books")])])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -47333,6 +47343,143 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-7dbf73fa", module.exports)
   }
 }
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(53)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Navbar.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-cadbadf2", Component.options)
+  } else {
+    hotAPI.reload("data-v-cadbadf2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "nav",
+      { staticClass: "navbar navbar-expand-sm navbar-dark bg-info mb-2" },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+            _vm._v("BookWorm")
+          ])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-cadbadf2", module.exports)
+  }
+}
+
+/***/ }),
+/* 54 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            books: [],
+            book: {
+                id: '',
+                title: '',
+                author: '',
+                pub_date: ''
+            },
+            // pass book_id in because update route needs it
+            book_id: '',
+            pagination: {},
+            edit: false
+        };
+    },
+    created: function created() {
+        this.fetchBooks();
+    },
+
+
+    methods: {
+        fetchBooks: function fetchBooks() {
+            var _this = this;
+
+            fetch('api/books').then(function (response) {
+                return response.json();
+            }).then(function (res) {
+                _this.books = res.data;
+            });
+        }
+    }
+
+});
 
 /***/ })
 /******/ ]);

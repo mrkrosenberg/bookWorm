@@ -17,7 +17,7 @@ class ApiBooksController extends Controller
     public function index()
     {
         // Get all books
-        $books = Book::paginate(10);
+        $books = Book::orderBy('created_at', 'desc')->paginate(10);
 
         // return collection of books as a resource
         return BookResource::collection($books);
