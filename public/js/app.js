@@ -47325,7 +47325,7 @@ var render = function() {
         return _c("div", { key: book.id, staticClass: "card card-body" }, [
           _c("h3", [_vm._v(_vm._s(book.title))]),
           _vm._v(" "),
-          _c("h4", [_vm._v("By: " + _vm._s(book.author))]),
+          _c("h5", [_vm._v("By: " + _vm._s(book.author))]),
           _vm._v(" "),
           _c("p", [_vm._v("Published: " + _vm._s(book.pub_date))])
         ])

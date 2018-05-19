@@ -3,7 +3,7 @@
         <h2>Books</h2>
         <div class="card card-body" v-for="book in books" v-bind:key="book.id">
             <h3>{{book.title}}</h3>
-            <h4>By: {{book.author}}</h4>
+            <h5>By: {{book.author}}</h5>
             <p>Published: {{book.pub_date}}</p>
         </div>
     </div>
