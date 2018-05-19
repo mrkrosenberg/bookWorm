@@ -1,6 +1,18 @@
 <template>
     <div>
         <h2>Your current reading list:</h2>
+        <form @submit.prevent="addBook" class="mb-5" >
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Title" v-model="book.title">
+            </div>
+                        <div class="form-group">
+                <input type="text" class="form-control" placeholder="Author" v-model="book.author">
+            </div>
+                        <div class="form-group">
+                <input type="text" class="form-control" placeholder="Publication Date" v-model="book.pub_date">
+            </div>
+            <button type="submit" class="btn btn-light btn-block mb-3">Save Book</button>
+        </form>
         <nav v-bind:class="[{ hidden: pagination.last_page > 1 }]" aria-label="Page navigation example">
             <ul class="pagination">
                 <li v-bind:class="[{ disabled: !pagination.prev_page_url }]" class="page-item">
@@ -88,6 +100,30 @@
                             this.fetchBooks();
                         })
                         .catch(error => console.log(error))
+                }
+            },
+
+            addBook() {
+                if(this.edit === false) {
+                    // adds new book
+                    fetch('api/book', {
+                        method: 'post',
+                        body: JSON.stringify(this.book),
+                        headers: {
+                            'content-type' : 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        this.book.title = '';
+                        this.book.author = '';
+                        this.book.pub_date = '';
+                        alert('Book added to your list');
+                        this.fetchBooks();
+                    })
+                    .catch();
+                } else {
+                    // updates existing book
                 }
             }
         }

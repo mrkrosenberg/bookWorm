@@ -47322,6 +47322,101 @@ var render = function() {
       _c("h2", [_vm._v("Your current reading list:")]),
       _vm._v(" "),
       _c(
+        "form",
+        {
+          staticClass: "mb-5",
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.addBook($event)
+            }
+          }
+        },
+        [
+          _c("div", { staticClass: "form-group" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.book.title,
+                  expression: "book.title"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Title" },
+              domProps: { value: _vm.book.title },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.book, "title", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.book.author,
+                  expression: "book.author"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Author" },
+              domProps: { value: _vm.book.author },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.book, "author", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.book.pub_date,
+                  expression: "book.pub_date"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Publication Date" },
+              domProps: { value: _vm.book.pub_date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.book, "pub_date", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-light btn-block mb-3",
+              attrs: { type: "submit" }
+            },
+            [_vm._v("Save Book")]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
         "nav",
         {
           class: [{ hidden: _vm.pagination.last_page > 1 }],
@@ -47556,6 +47651,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47616,6 +47723,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }).catch(function (error) {
                     return console.log(error);
                 });
+            }
+        },
+        addBook: function addBook() {
+            var _this3 = this;
+
+            if (this.edit === false) {
+                // adds new book
+                fetch('api/book', {
+                    method: 'post',
+                    body: JSON.stringify(this.book),
+                    headers: {
+                        'content-type': 'application/json'
+                    }
+                }).then(function (response) {
+                    return response.json();
+                }).then(function (data) {
+                    _this3.book.title = '';
+                    _this3.book.author = '';
+                    _this3.book.pub_date = '';
+                    alert('Book added to your list');
+                    _this3.fetchBooks();
+                }).catch();
+            } else {
+                // updates existing book
             }
         }
     }
