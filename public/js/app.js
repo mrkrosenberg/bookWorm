@@ -47321,6 +47321,63 @@ var render = function() {
     [
       _c("h2", [_vm._v("Books")]),
       _vm._v(" "),
+      _c(
+        "nav",
+        {
+          class: [{ hidden: _vm.pagination.last_page > 1 }],
+          attrs: { "aria-label": "Page navigation example" }
+        },
+        [
+          _c("ul", { staticClass: "pagination" }, [
+            _c(
+              "li",
+              {
+                staticClass: "page-item",
+                class: [{ disabled: !_vm.pagination.prev_page_url }]
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        _vm.fetchBooks(_vm.pagination.prev_page_url)
+                      }
+                    }
+                  },
+                  [_vm._v("Previous")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                staticClass: "page-item",
+                class: [{ disabled: !_vm.pagination.next_page_url }]
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        _vm.fetchBooks(_vm.pagination.next_page_url)
+                      }
+                    }
+                  },
+                  [_vm._v("Next")]
+                )
+              ]
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
       _vm._l(_vm.books, function(book) {
         return _c("div", { key: book.id, staticClass: "card card-body mb-3" }, [
           _c("h3", [_vm._v(_vm._s(book.title))]),
@@ -47445,6 +47502,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47468,17 +47536,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     methods: {
-        fetchBooks: function fetchBooks() {
+        fetchBooks: function fetchBooks(page_url) {
             var _this = this;
 
-            fetch('api/books').then(function (response) {
+            var globContext = this;
+            page_url = page_url || '/api/books';
+            fetch(page_url).then(function (response) {
                 return response.json();
             }).then(function (res) {
                 _this.books = res.data;
+                globContext.makePagination(res.meta, res.links);
+            }).catch(function (error) {
+                console.log(error);
             });
+        },
+        makePagination: function makePagination(meta, links) {
+            var pagination = {
+                current_page: meta.current_page,
+                last_page: meta.last_page,
+                first_page: meta.first_page,
+                next_page_url: links.next,
+                prev_page_url: links.prev
+            };
+
+            this.pagination = pagination;
         }
     }
-
 });
 
 /***/ })
