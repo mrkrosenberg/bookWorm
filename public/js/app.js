@@ -47502,6 +47502,19 @@ var render = function() {
           _c(
             "button",
             {
+              staticClass: "btn btn-warning",
+              on: {
+                click: function($event) {
+                  _vm.editBook(book)
+                }
+              }
+            },
+            [_vm._v("Edit Book")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
               staticClass: "btn btn-danger",
               on: {
                 click: function($event) {
@@ -47509,7 +47522,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Delete")]
+            [_vm._v("Delete Book")]
           )
         ])
       })
@@ -47663,6 +47676,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -47747,7 +47761,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }).catch();
             } else {
                 // updates existing book
+                fetch('api/book', {
+                    method: 'put',
+                    body: JSON.stringify(this.book),
+                    headers: {
+                        'content-type': 'application/json'
+                    }
+                }).then(function (response) {
+                    return response.json();
+                }).then(function (data) {
+                    _this3.book.title = '';
+                    _this3.book.author = '';
+                    _this3.book.pub_date = '';
+                    alert('The book has been updated');
+                    _this3.fetchBooks();
+                }).catch();
             }
+        },
+        editBook: function editBook(book) {
+            this.edit = true;
+            this.book.id = book.id;
+            this.book.book_id = book.id;
+            this.book.title = book.title;
+            this.book.author = book.author;
+            this.book.pub_date = book.pub_date;
         }
     }
 });

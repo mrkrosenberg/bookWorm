@@ -39,7 +39,8 @@
             <h5>By: {{book.author}}</h5>
             <p>Published: {{book.pub_date}}</p>
             <hr>
-            <button @click="deleteBook(book.id)" class="btn btn-danger">Delete</button>
+            <button @click="editBook(book)" class="btn btn-warning">Edit Book</button>
+            <button @click="deleteBook(book.id)" class="btn btn-danger">Delete Book</button>
         </div>
     </div>
 </template>
@@ -124,7 +125,32 @@
                     .catch();
                 } else {
                     // updates existing book
+                        fetch('api/book', {
+                        method: 'put',
+                        body: JSON.stringify(this.book),
+                        headers: {
+                            'content-type' : 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        this.book.title = '';
+                        this.book.author = '';
+                        this.book.pub_date = '';
+                        alert('The book has been updated');
+                        this.fetchBooks();
+                    })
+                    .catch();
                 }
+            },
+
+            editBook(book) {
+                this.edit = true;
+                this.book.id = book.id;
+                this.book.book_id = book.id;
+                this.book.title = book.title;
+                this.book.author = book.author;
+                this.book.pub_date = book.pub_date;
             }
         }
     };
