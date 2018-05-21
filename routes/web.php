@@ -15,7 +15,9 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'BooksController@indexByAuthor');
+Route::get('/', 'PagesController@main');
+
+Route::get('/indexByAuthor', 'BooksController@indexByAuthor');
 
 Route::get('/indexByTitle', 'BooksController@indexByTitle');
 

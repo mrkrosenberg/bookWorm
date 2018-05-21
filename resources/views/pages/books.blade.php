@@ -3,7 +3,7 @@
 @section('content')
     <h1>Your Reading List:</h1>
     <a href="/indexByTitle">Sort by title</a>
-    <a href="/">Sort by author</a>
+    <a href="/indexByAuthor">Sort by author</a>
         @if(count($books) > 0)
         <div class="items mb-5">
             @foreach($books as $book)
