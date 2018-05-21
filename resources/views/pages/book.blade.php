@@ -13,6 +13,7 @@
 
     {{-- Form to delete book --}}
     <h3>Remove this book from list?</h3>
+    <a href="/book/delete/{{$book->id}}" class="btn btn-danger">Remove Book</a>
     
 
 @endsection

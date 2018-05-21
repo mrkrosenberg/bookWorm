@@ -23,5 +23,5 @@ Route::get('/book/{id}', 'BooksController@show');
 
 Route::post('/book', 'BooksController@store');
 
-Route::delete('book/{id}, @BooksController@destroy');
+Route::delete('book/delete/{id}, @BooksController@destroy');
 
