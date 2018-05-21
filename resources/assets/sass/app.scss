@@ -8,6 +8,10 @@
 // Layouts
 @import "layouts/main";
 
+// Components
+@import 'components/focus';
+@import 'components/button';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
