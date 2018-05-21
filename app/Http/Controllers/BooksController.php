@@ -46,22 +46,13 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $this->validate(request(), [
             'title' => 'required',
             'author' => 'required',
             'pub_date' => 'required'
         ]);
 
-        // create new book
-        // $book = new Book;
-        // $book->title = $request->input('title');
-        // $book->author = $request->input('author');
-        // $book->pub_date = $request->input('pub_date');
-
-        // save the new book 
-        // $book->save();
-
-        $book = Book::create([
+        Book::create([
             'title' => request('title'),
             'author' => request('author'),
             'pub_date' => request('pub_date')
@@ -77,11 +68,11 @@ class BooksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Book $id)
     {
-        $book = Book::find($id);
-        // $post = Post::where('title', $id);
-        return view('pages.book')->with('book', $book);
+
+        return view('pages.book')->with('book', $id);
+
     }
 
     /**

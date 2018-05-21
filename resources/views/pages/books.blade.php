@@ -21,18 +21,22 @@
 
     {{-- Form for adding books --}}
     <h1>Add a new book to your list</h1>
+
+    {{-- error handling for browsers that don't support html5 validation --}}
+    @include('partials.errors')
+
     <form action="/book" method="POST">
 
         {{ csrf_field() }}
 
         <div class="form-group">
-            <input type="text" class="form-control" id="title" name="title" placeholder="Book Title">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Book Title" required>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="author" name="author" placeholder="Author">
+            <input type="text" class="form-control" id="author" name="author" placeholder="Author" required>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="pub_date" name="pub_date" placeholder="Publication Date">
+            <input type="text" class="form-control" id="pub_date" name="pub_date" placeholder="Publication Date" required>
         </div>
         <div class="form-group">
             <button type="submit" class="btn">Save Book</button>
