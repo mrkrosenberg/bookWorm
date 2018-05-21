@@ -15,16 +15,15 @@ class BooksController extends Controller
     public function indexByAuthor()
     {
         $books = Book::orderBy('author', 'asc')->paginate(50);
-        // $books = Book::all('title');
 
-        return view('pages.books')->with('books', $books);
+        return view('pages.books', compact('books'));
     }
 
       public function indexByTitle()
     {
         $books = Book::orderBy('title', 'desc')->paginate(50);
 
-        return view('pages.books')->with('books', $books);
+        return view('pages.books', compact('books'));
     }
 
     /**
