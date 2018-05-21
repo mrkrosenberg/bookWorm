@@ -12,9 +12,9 @@ class BooksController extends Controller
     // Index routes for sorting by author and title
     public function indexByAuthor()
     {
-        $books = Book::orderBy('author', 'asc')->paginate(50);
+        $books = Book::all('author', 'asc')->paginate(50);
 
-        return view('pages.books', compact('books'));
+        return view('pages.books')->with('books', $books);
     }
 
       public function indexByTitle()
