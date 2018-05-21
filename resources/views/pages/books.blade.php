@@ -45,4 +45,8 @@
 
 @endsection
 
+@section('footer')
+    <script src="{{asset('js/slider.js')}}"></script>
+@endsection
+
 {{-- <script src="{{asset('js/slider.js')}}" ></script> --}}
