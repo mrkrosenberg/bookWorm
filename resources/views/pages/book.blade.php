@@ -1,15 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="/" class="btn btn-primary">Go Back</a>
+    {{-- <a href="/indexByAuthor" class="btn btn-primary">Go Back</a> --}}
     @if($book->image)
         {{-- using asset helper creates a url --}}
         <img src="{{ asset('images/' . $book->image) }}" height="400" width="800">
     @endif
-    <h1>Book Detail Page</h1>
-    <h3>{{$book->title}}</h3>
-    <h3>{{$book->author}}</h3>
-    <h3>{{$book->pub_date}}</h3>
+    <div class="card card-body">
+        <h3>{{$book->title}}</h3>
+        <p>By: {{$book->author}}</p>
+        <p>Published on: {{$book->pub_date}}</p>
+    </div>
 
     {{-- Form to delete book --}}
     <h3>Remove this book from list?</h3>
