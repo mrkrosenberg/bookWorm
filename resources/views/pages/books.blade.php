@@ -8,7 +8,9 @@
         <div class="items mb-5">
             @foreach($books as $book)
                     <div class="item">
-                        <h3>{{$book->title}}</h3>
+                        <h3>
+                            <a href="/book/{{$book->id}}">{{$book->title}}</a>
+                        </h3>
                     </div>
             @endforeach
         </div>
@@ -38,3 +40,5 @@
     </form>
 
 @endsection
+
+{{-- <script src="{{asset('js/slider.js')}}" ></script> --}}

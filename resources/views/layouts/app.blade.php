@@ -9,7 +9,7 @@
         {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
 
         <link rel="stylesheet" href="{{asset('css/app.css')}}" ></link>
-        <link rel="stylesheet" href="../../../css/slider.css"></link>
+        <link rel="stylesheet" href="{{asset('css/slider.css')}}"></link>
 
     </head>
     <body>
@@ -21,5 +21,6 @@
     <script>
         CKEDITOR.replace( 'article-ckeditor' );
     </script> --}}
+    
     </body>
 </html>

@@ -19,5 +19,7 @@ Route::get('/', 'BooksController@indexByAuthor');
 
 Route::get('/indexByTitle', 'BooksController@indexByTitle');
 
+Route::get('/book/{id}', 'BooksController@show');
+
 Route::post('/book', 'BooksController@store');
 

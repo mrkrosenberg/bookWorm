@@ -71,7 +71,9 @@ class BooksController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Book::find($id);
+        // $post = Post::where('title', $id);
+        return view('pages.book')->with('book', $book);
     }
 
     /**
