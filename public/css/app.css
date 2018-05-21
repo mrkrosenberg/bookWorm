@@ -15,7 +15,7 @@
   margin-bottom: 6rem;
   display: block;
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 3.5rem;
   -webkit-animation-name: moveInLeft;
           animation-name: moveInLeft;
@@ -37,9 +37,28 @@
 
 @media screen and (max-width: 820px) {
   .main-title {
-    font-size: 1rem;
-    line-height: 5rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    letter-spacing: 2rem;
     font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .main-title {
+    font-size: 2rem;
+    letter-spacing: 1rem;
+    line-height: 3rem;
+    font-weight: 800;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .main-title {
+    font-size: 1rem;
+    letter-spacing: .5rem;
+    line-height: 2rem;
+    font-weight: 800;
   }
 }
 
@@ -51,8 +70,8 @@
   cursor: pointer;
 }
 
-.btn:link,
-.btn:visited {
+.btn--main:link,
+.btn--main:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -65,21 +84,21 @@
   font-size: 1.6rem;
 }
 
-.btn:hover {
+.btn--main:hover {
   -webkit-transform: translateY(-0.3rem);
           transform: translateY(-0.3rem);
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
           box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-.btn:active {
+.btn--main:active {
   -webkit-transform: translateX(-0.1rem);
           transform: translateX(-0.1rem);
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn::after {
+.btn--main::after {
   /* after psuedo element MUST contain content and display (can be blank) */
   content: "";
   display: inline-block;

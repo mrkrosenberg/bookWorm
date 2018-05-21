@@ -1,4 +1,4 @@
-.btn {
+.btn--main {
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -47,5 +47,9 @@
 .btn--animated {
     animation: moveInBottom .2s ease-out .2s;
     animation-fill-mode: backwards;
+}
+
+@media screen and (max-width: 630px) {
+
 }
 

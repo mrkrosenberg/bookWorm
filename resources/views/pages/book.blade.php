@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- <a href="/indexByAuthor" class="btn btn-primary">Go Back</a> --}}
+    <a href="/indexByAuthor" class="btn btn-primary">Go Back</a>
     @if($book->image)
         {{-- using asset helper creates a url --}}
         <img src="{{ asset('images/' . $book->image) }}" height="400" width="800">
