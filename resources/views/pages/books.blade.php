@@ -37,11 +37,11 @@
         <div class="form-group">
             <input type="text" class="form-control" id="pub_date" name="pub_date" placeholder="Publication Date" required>
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="file">Upload Image (optional) :</label>
             <br>
             <input type="file" name="file" id="file">
-        </div>
+        </div> --}}
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Save Book</button>
         </div>

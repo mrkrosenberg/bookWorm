@@ -12,9 +12,9 @@ class BooksController extends Controller
     // Index routes for sorting by author and title
     public function indexByAuthor()
     {
-        $books = Book::all('author', 'asc')->paginate(50);
+        $books = Book::orderBy('author', 'asc')->paginate(50);
 
-        return view('pages.books')->with('books', $books);
+        return view('pages.books', compact('books'));
     }
 
       public function indexByTitle()
@@ -41,14 +41,14 @@ class BooksController extends Controller
         $book->pub_date = $request->pub_date;
 
         // save image (using intervention/image)
-        if ($request->hasFile('file')) {
-            $image = $request->file('file');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('images/' . $filename);
-            Image::make($image)->resize(800, 400)->save($location);
+        // if ($request->hasFile('file')) {
+        //     $image = $request->file('file');
+        //     $filename = time() . '.' . $image->getClientOriginalExtension();
+        //     $location = public_path('images/' . $filename);
+        //     Image::make($image)->resize(800, 400)->save($location);
 
-            $book->image = $filename;
-        }
+        //     $book->image = $filename;
+        // }
 
         $book->save();
 

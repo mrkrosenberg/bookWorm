@@ -2,10 +2,9 @@
 
 @section('content')
     <a href="/indexByAuthor" class="btn btn-primary">Go Back</a>
-    @if($book->image)
-        {{-- using asset helper creates a url --}}
+    {{-- @if($book->image)
         <img src="{{ asset('images/' . $book->image) }}" height="400" width="800">
-    @endif
+    @endif --}}
     <div class="card card-body">
         <h3>{{$book->title}}</h3>
         <p>By: {{$book->author}}</p>
