@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'BooksController@indexByAuthor');
+
+Route::get('/indexByTitle', 'BooksController@indexByTitle');
+
+Route::post('/book', 'BooksController@store');
+

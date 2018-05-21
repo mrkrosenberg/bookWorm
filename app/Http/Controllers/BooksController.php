@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Book;
 
 class BooksController extends Controller
 {
@@ -11,9 +12,19 @@ class BooksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexByAuthor()
     {
-        //
+        $books = Book::orderBy('author', 'asc')->paginate(50);
+        // $books = Book::all('title');
+
+        return view('pages.books')->with('books', $books);
+    }
+
+      public function indexByTitle()
+    {
+        $books = Book::orderBy('title', 'desc')->paginate(50);
+
+        return view('pages.books')->with('books', $books);
     }
 
     /**
@@ -23,7 +34,8 @@ class BooksController extends Controller
      */
     public function create()
     {
-        //
+        // call index function from here to re-render the page
+        
     }
 
     /**
@@ -34,7 +46,21 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'author' => 'required',
+            'pub_date' => 'required'
+        ]);
+
+        // create new book
+        $book = new Book;
+        $book->title = $request->input('title');
+        $book->author = $request->input('author');
+        $book->pub_date = $request->input('pub_date');
+        $book->save();
+
+        return redirect('/')->with('success', 'Book Added To Your List');
+
     }
 
     /**

@@ -1,19 +1,23 @@
 <template>
     <div>
-        <h2>Your current reading list:</h2>
+<!-- Book Form -->
+        <h2>Add/Edit Books in Your List</h2>
         <form @submit.prevent="addBook" class="mb-5" >
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Title" v-model="book.title">
+                <input type="text" class="form-control" placeholder="Title" v-model="book.title" maxlength="49">
             </div>
-                        <div class="form-group">
+            <div class="form-group">
                 <input type="text" class="form-control" placeholder="Author" v-model="book.author">
             </div>
-                        <div class="form-group">
+            <div class="form-group">
                 <input type="text" class="form-control" placeholder="Publication Date" v-model="book.pub_date">
             </div>
             <button type="submit" class="btn btn-light btn-block mb-3">Save Book</button>
         </form>
-        <nav v-bind:class="[{ hidden: pagination.last_page > 1 }]" aria-label="Page navigation example">
+
+<!-- Pagination Navigation -->
+    <h2>Reading List:</h2>
+        <!-- <nav  aria-label="Page navigation example">
             <ul class="pagination">
                 <li v-bind:class="[{ disabled: !pagination.prev_page_url }]" class="page-item">
                     <a class="page-link" href="#" @click="fetchBooks(pagination.prev_page_url)">
@@ -33,19 +37,37 @@
                      </a>
                 </li>
             </ul>
-        </nav>
-        <div class="card card-body mb-3" v-for="book in books" v-bind:key="book.id">
+        </nav> -->
+
+<!-- Reading List -->
+        <!-- <div class="card card-body mb-3" v-for="book in books" v-bind:key="book.id">
             <h3>{{book.title}}</h3>
             <h5>By: {{book.author}}</h5>
             <p>Published: {{book.pub_date}}</p>
             <hr>
             <button @click="editBook(book)" class="btn btn-warning">Edit Book</button>
             <button @click="deleteBook(book.id)" class="btn btn-danger">Delete Book</button>
+        </div> -->
+
+    <div class="items">
+        <div class="item" v-for="book in books" v-bind:key="book.id" >
+            <div class="title">
+                <h3>
+                    {{book.title}}
+                </h3>
+                <p>{{book.author}}</p>
+                <br>
+                <button @click="deleteBook(book.id)" class="btn btn-danger">Delete Book</button>
+                <button @click="editBook(book)" class="btn btn-warning">Edit Book</button>
+            </div>
         </div>
+    </div>
+
     </div>
 </template>
 
 <script>
+
     export default {
         data() {
             return {
@@ -154,5 +176,91 @@
             }
         }
     };
+
 </script>
+
+<style scoped>
+
+    .items {
+        height: 800px;
+        padding: 100px;
+        width: 100%;
+        border: 1px solid white;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        user-select: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        transform: scale(0.98);
+        will-change: transform;
+        position: relative;
+        background: rgba(255, 255, 255, 0.1);
+        font-size: 0;
+        perspective: 500px;
+    }
+
+    .item {
+        width: 600px;
+        height: calc(100% - 40px);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+        font-weight: 100;
+        color: rgba(0, 0, 0, 1);
+        box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .title {
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .item:nth-child(9n+1) {
+        background: dodgerblue;
+    }
+
+    .item:nth-child(9n+2) {
+        background: goldenrod;
+    }
+
+    .item:nth-child(9n+3) {
+        background: paleturquoise;
+    }
+
+    .item:nth-child(9n+4) {
+        background: gold;
+    }
+
+    .item:nth-child(9n+5) {
+        background: cadetblue;
+    }
+
+    .item:nth-child(9n+6) {
+        background: tomato;
+    }
+
+    .item:nth-child(9n+7) {
+        background: lightcoral;
+    }
+
+    .item:nth-child(9n+8) {
+        background: darkslateblue;
+    }
+
+    .item:nth-child(9n+9) {
+        background: rebeccapurple;
+    }
+
+    .item:nth-child(even) {
+        transform: scaleX(1) rotateY(10deg);
+    }
+
+    .item:nth-child(odd) {
+        transform: scaleX(1) rotateY(-10deg);
+    }
+</style>
+
 
