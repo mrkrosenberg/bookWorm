@@ -2,6 +2,37 @@
   height: 100vh;
   width: 100vw;
   background-image: url(/images/background.jpg?98742b8303078650f0a8539515a504a6);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+
+.main-title {
+  color: white;
+  text-transform: uppercase;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  margin-bottom: 6rem;
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  -webkit-animation-name: moveInLeft;
+          animation-name: moveInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.header {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* sets the initial "position" of this element to its center, rather than top left corner */
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .focus {
@@ -10,6 +41,133 @@
   width: 100%;
   background-image: radial-gradient(circle, transparent 75px, rgba(0, 0, 0, 0.65) 200px);
   cursor: pointer;
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  /* transition property has to be on the initial state */
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+.btn:hover {
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  -webkit-transform: translateX(-0.1rem);
+          transform: translateX(-0.1rem);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  /* after psuedo element MUST contain content and display (can be blank) */
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.btn--white {
+  background-color: white;
+  color: #777;
+}
+
+.btn--white::after {
+  background-color: white;
+}
+
+.btn--animated {
+  -webkit-animation: moveInBottom .2s ease-out .2s;
+          animation: moveInBottom .2s ease-out .2s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+@-webkit-keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
+  }
+
+  80% {
+    -webkit-transform: translateX(2rem);
+            transform: translateX(2rem);
+    /* transform: rotate(180deg); */
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10rem);
+            transform: translateX(-10rem);
+  }
+
+  80% {
+    -webkit-transform: translateX(2rem);
+            transform: translateX(2rem);
+    /* transform: rotate(180deg); */
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 /*!
