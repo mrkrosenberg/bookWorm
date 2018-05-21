@@ -7,10 +7,6 @@
     <h3>{{$book->author}}</h3>
     <h3>{{$book->pub_date}}</h3>
 
-    {{-- Form to edit book information --}}
-    <h3>Something Wrong? Edit book entry:</h3>
-    <form action=""></form>
-
     {{-- Form to delete book --}}
     <h3>Remove this book from list?</h3>
     {{-- <a href="/book/delete/{{$book->id}}" class="btn btn-danger">Remove Book</a> --}}

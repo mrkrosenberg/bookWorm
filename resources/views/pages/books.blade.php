@@ -25,7 +25,7 @@
     {{-- error handling for browsers that don't support html5 validation --}}
     @include('partials.errors')
 
-    <form action="/book" method="POST">
+    <form action="/book" method="POST" enctype="multipart/form-data">
 
         {{ csrf_field() }}
 
@@ -39,8 +39,12 @@
             <input type="text" class="form-control" id="pub_date" name="pub_date" placeholder="Publication Date" required>
         </div>
         <div class="form-group">
+            <input type="file" name="file" id="file">
+        </div>
+        <div class="form-group">
             <button type="submit" class="btn">Save Book</button>
         </div>
+       
     </form>
 
 @endsection
