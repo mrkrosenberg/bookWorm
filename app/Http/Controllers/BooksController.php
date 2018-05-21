@@ -54,7 +54,8 @@ class BooksController extends Controller
         Book::create([
             'title' => request('title'),
             'author' => request('author'),
-            'pub_date' => request('pub_date')
+            'pub_date' => request('pub_date'),
+            'image' => request('file')
         ]);
 
         return redirect('/')->with('success', 'Book Added To Your List');
