@@ -9,17 +9,18 @@ use App\Http\Resources\BookResource;
 
 class ApiBooksController extends Controller
 {
-  
+  // Get collection of all books
     public function index()
     {
-        // Get all books
+        
         $books = Book::orderBy('author', 'asc')->paginate(30);
 
-        // return collection of books as a resource
         return BookResource::collection($books);
       
     }
 
+
+    // Create new book resource
     public function store(Request $request)
     {
         // conditional for update function
@@ -34,9 +35,10 @@ class ApiBooksController extends Controller
         if($book->save()) {
             return new BookResource($book);
         }
-
     }
 
+
+    // Show one specific book
     public function show($id)
     {
         $book = Book::findOrFail($id);
@@ -45,6 +47,8 @@ class ApiBooksController extends Controller
 
     }
 
+
+    // Delete book from database
     public function destroy($id)
     {
         $book = Book::findOrFail($id);
