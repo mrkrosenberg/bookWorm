@@ -2,8 +2,7 @@
 
 @section('content')
     <h1>Your Reading List:</h1>
-    <a href="/indexByTitle">Sort by title</a>
-    <a href="/indexByAuthor">Sort by author</a>
+
         @if(count($books) > 0)
         <div class="items mb-5">
             @foreach($books as $book)
@@ -20,7 +19,7 @@
     @endif
 
     {{-- Form for adding books --}}
-    <h1>Add a new book to your list</h1>
+    <h1>Add new book</h1>
 
     {{-- error handling for browsers that don't support html5 validation --}}
     @include('partials.errors')

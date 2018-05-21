@@ -225,6 +225,10 @@ body {
           transform: scaleX(1) rotateY(-10deg);
 }
 
+.navbar {
+  width: 100vw;
+}
+
 @-webkit-keyframes moveInBottom {
   0% {
     opacity: 0;
