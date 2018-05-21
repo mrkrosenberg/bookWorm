@@ -8,7 +8,7 @@
         <div class="items mb-5">
             @foreach($books as $book)
                     <div class="item">
-                        <h3>
+                        <h3 class="title">
                             <a href="/book/{{$book->id}}">{{$book->title}}</a>
                         </h3>
                     </div>

@@ -53,11 +53,19 @@ class BooksController extends Controller
         ]);
 
         // create new book
-        $book = new Book;
-        $book->title = $request->input('title');
-        $book->author = $request->input('author');
-        $book->pub_date = $request->input('pub_date');
-        $book->save();
+        // $book = new Book;
+        // $book->title = $request->input('title');
+        // $book->author = $request->input('author');
+        // $book->pub_date = $request->input('pub_date');
+
+        // save the new book 
+        // $book->save();
+
+        $book = Book::create([
+            'title' => request('title'),
+            'author' => request('author'),
+            'pub_date' => request('pub_date')
+        ]);
 
         return redirect('/')->with('success', 'Book Added To Your List');
 
