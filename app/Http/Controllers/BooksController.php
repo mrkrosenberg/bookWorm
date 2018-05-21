@@ -82,7 +82,7 @@ class BooksController extends Controller
 
         $book->save();
 
-        return redirect('/')->with('success', 'Book Added To Your List');
+        return redirect('/indexByAuthor')->with('success', 'Book Added To Your List');
 
     }
 
@@ -132,6 +132,6 @@ class BooksController extends Controller
     {
         $book = Book::find($id);
         $book->delete();
-        return redirect('/')->with('success', 'Removed Book From List');
+        return redirect('/indexByAuthor')->with('success', 'Removed Book From List');
     }
 }
