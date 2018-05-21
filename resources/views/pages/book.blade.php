@@ -2,6 +2,10 @@
 
 @section('content')
     <a href="/" class="btn btn-primary">Go Back</a>
+    @if($book->image)
+        {{-- using asset helper creates a url --}}
+        <img src="{{ asset('images/' . $book->image) }}" height="400" width="800">
+    @endif
     <h1>Book Detail Page</h1>
     <h3>{{$book->title}}</h3>
     <h3>{{$book->author}}</h3>
