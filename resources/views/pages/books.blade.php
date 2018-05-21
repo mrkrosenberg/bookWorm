@@ -39,10 +39,12 @@
             <input type="text" class="form-control" id="pub_date" name="pub_date" placeholder="Publication Date" required>
         </div>
         <div class="form-group">
+            <label for="file">Upload Image:</label>
+            <br>
             <input type="file" name="file" id="file">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn">Save Book</button>
+            <button type="submit" class="btn btn-primary">Save Book</button>
         </div>
        
     </form>

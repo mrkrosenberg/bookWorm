@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use Image;
 
 class BooksController extends Controller
 {
@@ -51,12 +52,35 @@ class BooksController extends Controller
             'pub_date' => 'required'
         ]);
 
-        Book::create([
-            'title' => request('title'),
-            'author' => request('author'),
-            'pub_date' => request('pub_date'),
-            'image' => request('file')
-        ]);
+        // Book::create([
+        //     'title' => request('title'),
+        //     'author' => request('author'),
+        //     'pub_date' => request('pub_date'),
+        //     'image' => request('file')
+        // ]);
+
+        $book = new Book;
+
+        $book->title = $request->title;
+        $book->author = $request->author;
+        $book->pub_date = $request->pub_date;
+
+        // save image (using intervention/image)
+        if ($request->hasFile('file')) {
+            $image = $request->file('file');
+            // gives the image a time stamp identifier
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            // set location to the public folder
+            $location = public_path('images/' . $filename);
+            // make an image object and configure optional settings
+            // save it at the specified location
+            Image::make($image)->resize(800, 400)->save($location);
+
+            // saves the image file name in the database (for later reference)
+            $book->image = $filename;
+        }
+
+        $book->save();
 
         return redirect('/')->with('success', 'Book Added To Your List');
 
