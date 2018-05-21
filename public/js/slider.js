@@ -26,6 +26,6 @@ slider.addEventListener('mousemove', (e) => {
     // recalculates mouse position each time mouse moves
     const x = e.pageX - slider.offsetLeft;
     // calculate distance the mouse moves from anchor point
-    const walk = (x - startX) * 3;
+    const walk = (x - startX) * 5;
     slider.scrollLeft = scrollLeft - walk;
 })

@@ -13,7 +13,12 @@
 
     {{-- Form to delete book --}}
     <h3>Remove this book from list?</h3>
-    <a href="/book/delete/{{$book->id}}" class="btn btn-danger">Remove Book</a>
+    {{-- <a href="/book/delete/{{$book->id}}" class="btn btn-danger">Remove Book</a> --}}
+    <form action="/book/delete/{{$book->id}}" method="POST">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+        <button class="btn btn-danger">Remove book from list</button>
+    </form>
     
 
 @endsection
