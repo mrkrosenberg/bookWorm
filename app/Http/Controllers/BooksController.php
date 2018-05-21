@@ -8,11 +8,8 @@ use Image;
 
 class BooksController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
+    // Index routes for sorting by author and title
     public function indexByAuthor()
     {
         $books = Book::orderBy('author', 'asc')->paginate(50);
@@ -27,23 +24,8 @@ class BooksController extends Controller
         return view('pages.books', compact('books'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        // call index function from here to re-render the page
-        
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // Create new book
     public function store(Request $request)
     {
         $this->validate(request(), [
@@ -51,13 +33,6 @@ class BooksController extends Controller
             'author' => 'required',
             'pub_date' => 'required'
         ]);
-
-        // Book::create([
-        //     'title' => request('title'),
-        //     'author' => request('author'),
-        //     'pub_date' => request('pub_date'),
-        //     'image' => request('file')
-        // ]);
 
         $book = new Book;
 
@@ -68,15 +43,10 @@ class BooksController extends Controller
         // save image (using intervention/image)
         if ($request->hasFile('file')) {
             $image = $request->file('file');
-            // gives the image a time stamp identifier
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            // set location to the public folder
             $location = public_path('images/' . $filename);
-            // make an image object and configure optional settings
-            // save it at the specified location
             Image::make($image)->resize(800, 400)->save($location);
 
-            // saves the image file name in the database (for later reference)
             $book->image = $filename;
         }
 
@@ -86,12 +56,8 @@ class BooksController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
+    // Show selected book
     public function show(Book $id)
     {
 
@@ -99,35 +65,8 @@ class BooksController extends Controller
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Delete Book from database
     public function destroy($id)
     {
         $book = Book::find($id);
