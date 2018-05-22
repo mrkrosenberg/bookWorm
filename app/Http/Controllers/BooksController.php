@@ -41,14 +41,14 @@ class BooksController extends Controller
         $book->pub_date = $request->pub_date;
 
         // save image (using intervention/image)
-        // if ($request->hasFile('file')) {
-        //     $image = $request->file('file');
-        //     $filename = time() . '.' . $image->getClientOriginalExtension();
-        //     $location = public_path('images/' . $filename);
-        //     Image::make($image)->resize(800, 400)->save($location);
+        if ($request->hasFile('file')) {
+            $image = $request->file('file');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/' . $filename);
+            Image::make($image)->resize(800, 400)->save($location);
 
-        //     $book->image = $filename;
-        // }
+            $book->image = $filename;
+        }
 
         $book->save();
 
