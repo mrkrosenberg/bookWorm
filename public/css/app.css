@@ -219,6 +219,52 @@ body {
           box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
+.item:nth-child(9n+1) {
+  background: dodgerblue;
+}
+
+.item:nth-child(9n+2) {
+  background: goldenrod;
+}
+
+.item:nth-child(9n+3) {
+  background: paleturquoise;
+}
+
+.item:nth-child(9n+4) {
+  background: gold;
+}
+
+.item:nth-child(9n+5) {
+  background: cadetblue;
+}
+
+.item:nth-child(9n+6) {
+  background: tomato;
+}
+
+.item:nth-child(9n+7) {
+  background: lightcoral;
+}
+
+.item:nth-child(9n+8) {
+  background: darkslateblue;
+}
+
+.item:nth-child(9n+9) {
+  background: rebeccapurple;
+}
+
+.item:nth-child(even) {
+  -webkit-transform: scaleX(1.31) rotateY(40deg);
+          transform: scaleX(1.31) rotateY(40deg);
+}
+
+.item:nth-child(odd) {
+  -webkit-transform: scaleX(1.31) rotateY(-40deg);
+          transform: scaleX(1.31) rotateY(-40deg);
+}
+
 .item:nth-child(even) {
   -webkit-transform: scaleX(1) rotateY(10deg);
           transform: scaleX(1) rotateY(10deg);
@@ -227,6 +273,16 @@ body {
 .item:nth-child(odd) {
   -webkit-transform: scaleX(1) rotateY(-10deg);
           transform: scaleX(1) rotateY(-10deg);
+}
+
+.items {
+  background-image: url(/images/libback.jpeg?c618b24074a887e7293ed7184a53d913);
+  background-repeat: repeat;
+  background-position: cover;
+}
+
+.item {
+  z-index: 2;
 }
 
 @-webkit-keyframes moveInBottom {

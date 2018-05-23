@@ -24,7 +24,6 @@
     <body>
 
         <div class="container main_content">
-            @include('partials.navbar')
             @yield('content')
             @include('partials.footer')
         </div>

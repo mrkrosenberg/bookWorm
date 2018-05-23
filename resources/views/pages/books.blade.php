@@ -1,18 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- <h1>Your Reading List:</h1> --}}
-    {{-- <a href="/indexByTitle">Sort by title</a>
-    <a href="/indexByAuthor">Sort by author</a> --}}
+
+@include('partials.navbar')
+
         @if(count($books) > 0)
-        <div class="items mb-5">
-            @foreach($books as $book)
-                    <div class="item">
-                        <h3 class="title">
-                            <a href="/book/{{$book->id}}">{{$book->title}}</a>
-                        </h3>
-                    </div>
-            @endforeach
+        <div class="item-background">
+            <div class="items mb-5">
+                @foreach($books as $book)
+                        <div class="item">
+                            <h3 class="title">
+                                <a href="/book/{{$book->id}}">{{$book->title}}</a>
+                            </h3>
+                        </div>
+                @endforeach
+            </div>
         </div>
         <hr>
     @else
