@@ -23,13 +23,12 @@
 
     <body>
 
-        @include('partials.navbar')
-
-        <div class="container">
+        <div class="container main_content">
+            @include('partials.navbar')
             @yield('content')
+            @include('partials.footer')
         </div>
 
-        @include('partials.footer')
 
         @yield('footer')
 
