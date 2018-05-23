@@ -134,7 +134,7 @@
 }
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: white;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
@@ -220,39 +220,39 @@ body {
 }
 
 .item:nth-child(9n+1) {
-  background: dodgerblue;
+  background: #663300;
 }
 
 .item:nth-child(9n+2) {
-  background: goldenrod;
+  background: #336600;
 }
 
 .item:nth-child(9n+3) {
-  background: paleturquoise;
+  background: #ff8566;
 }
 
 .item:nth-child(9n+4) {
-  background: gold;
+  background: #330a00;
 }
 
 .item:nth-child(9n+5) {
-  background: cadetblue;
+  background: #663300;
 }
 
 .item:nth-child(9n+6) {
-  background: tomato;
+  background: #336600;
 }
 
 .item:nth-child(9n+7) {
-  background: lightcoral;
+  background: #ff8566;
 }
 
 .item:nth-child(9n+8) {
-  background: darkslateblue;
+  background: #330a00;
 }
 
 .item:nth-child(9n+9) {
-  background: rebeccapurple;
+  background: black;
 }
 
 .item:nth-child(even) {

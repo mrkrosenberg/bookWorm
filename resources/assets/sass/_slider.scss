@@ -1,5 +1,5 @@
 .navbar-laravel {
-    background-color: #fff;
+    background-color: $color-white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
@@ -27,7 +27,7 @@ body {
     height: 800px;
     padding: 100px;
     width: 100%;
-    border: 1px solid white;
+    border: 1px solid $color-white;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -62,39 +62,39 @@ body {
 }
 
 .item:nth-child(9n+1) {
-    background: dodgerblue;
+    background: $color-primary;
 }
 
 .item:nth-child(9n+2) {
-    background: goldenrod;
+    background: $color-secondary;
 }
 
 .item:nth-child(9n+3) {
-    background: paleturquoise;
+    background: $color-tertiary;
 }
 
 .item:nth-child(9n+4) {
-    background: gold;
+    background: $color-quaternary;
 }
 
 .item:nth-child(9n+5) {
-    background: cadetblue;
+    background: $color-primary;
 }
 
 .item:nth-child(9n+6) {
-    background: tomato;
+    background: $color-secondary;
 }
 
 .item:nth-child(9n+7) {
-    background: lightcoral;
+    background: $color-tertiary;
 }
 
 .item:nth-child(9n+8) {
-    background: darkslateblue;
+    background: $color-quaternary;
 }
 
 .item:nth-child(9n+9) {
-    background: rebeccapurple;
+    background: $color-black;
 }
 
 .item:nth-child(even) {
