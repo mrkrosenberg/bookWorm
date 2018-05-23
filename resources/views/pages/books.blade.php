@@ -5,7 +5,6 @@
 @include('partials.navbar')
 
         @if(count($books) > 0)
-        <div class="item-background">
             <div class="items mb-5">
                 @foreach($books as $book)
                         <div class="item">
@@ -15,7 +14,6 @@
                         </div>
                 @endforeach
             </div>
-        </div>
         <hr>
     @else
         <p>Your Reading List is empty</p>
