@@ -30,6 +30,16 @@ The Laravel framework was relatively simple to wrap my head around, yet powerful
     - Download MAMP or XAMPP or a similar program
       - https://www.mamp.info/
       - https://www.apachefriends.org/download.html
-  - 
+  - open in your favorite text editor/browser in whichever environment you have chosen
+  
+## Not Done Yet! - Features for the future
+
+    - I would to implement a search function to do text searches through the reading list
+    - I would also like to add authentication (laravel makes this really simple) to this app and allow
+    users to save their own private reading lists
+    - Implementing a 3rd party api to search a database for books would make this app much more useful
+    - Adding a calendar-type function where users could add in timeframes that they want to complete a book in.
+    That way users could not only save books to a reading list, but also stay on track and record progress as they
+    work their way through the ever-expanding list
 
 
