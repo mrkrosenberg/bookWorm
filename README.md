@@ -1,3 +1,5 @@
+** Quick Notice: due to some mix-ups, the main code is found on the newTestBranch in this Github repo
+
 # Bookworm Reading List
 
 Bookworm Reading List is an interactive web app that allows users to create to-read lists and keep track of books they have 
