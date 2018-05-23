@@ -186,14 +186,18 @@ body {
           transform: scale(0.98);
   will-change: transform;
   position: relative;
-  background: rgba(255, 255, 255, 0.1);
+  background-image: url(/images/libback.jpeg?c618b24074a887e7293ed7184a53d913);
+  background-repeat: repeat;
+  background-position: cover;
   font-size: 0;
   -webkit-perspective: 500px;
           perspective: 500px;
 }
 
 .items.active {
-  background: rgba(255, 255, 255, 0.3);
+  background-image: url(/images/libback.jpeg?c618b24074a887e7293ed7184a53d913);
+  background-repeat: repeat;
+  background-position: cover;
   cursor: grabbing;
   cursor: -webkit-grabbing;
   -webkit-transform: scale(1);
@@ -273,12 +277,6 @@ body {
 .item:nth-child(odd) {
   -webkit-transform: scaleX(1) rotateY(-10deg);
           transform: scaleX(1) rotateY(-10deg);
-}
-
-.items {
-  background-image: url(/images/libback.jpeg?c618b24074a887e7293ed7184a53d913);
-  background-repeat: repeat;
-  background-position: cover;
 }
 
 .item {
