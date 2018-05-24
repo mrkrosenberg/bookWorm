@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Book;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -16,4 +17,5 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
 }
