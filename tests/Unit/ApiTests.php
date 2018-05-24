@@ -13,9 +13,15 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testApiGet()
     {
-        $this->assertTrue(true);
+        $response = $this->json('GET', '/api/books');
+
+        $response
+            ->assertStatus(200)
+            ->assertJson([
+                'data' => true
+            ]);
     }
 
 }
