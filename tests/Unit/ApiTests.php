@@ -24,4 +24,16 @@ class ExampleTest extends TestCase
             ]);
     }
 
+    public function testApiPost() {
+
+        $response = $this->json('POST', 'api/book');
+
+        $response  
+            ->assertStatus(200)
+            ->assertJson([
+                'data' => true
+            ]);
+
+    }
+
 }
