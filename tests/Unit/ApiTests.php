@@ -31,7 +31,7 @@ class ExampleTest extends TestCase
         $response  
             ->assertStatus(200)
             ->assertJson([
-                'data' => true
+                'created_at' => true
             ]);
 
     }
