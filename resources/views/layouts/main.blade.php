@@ -17,8 +17,12 @@
     </head>
 
     <body>
-
-        @yield('content')
+        <div class="landing">
+            <div class="focus">
+                @yield('content')
+            </div>
+        </div>
+        
   
 
         {{-- Scripts --}}
