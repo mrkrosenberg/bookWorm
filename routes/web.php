@@ -19,7 +19,9 @@
 
 Route::get('/', 'PagesController@main');
 
+Route::get('/login', 'PagesController@login');
 
+Route::get('/signup', 'PagesController@signup');
 
 
 // Books Routes
