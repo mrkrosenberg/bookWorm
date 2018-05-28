@@ -4,15 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use App\User;
 use Image;
 
 class BooksController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function index() {
+
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        return view('pages.books', compact('books', $user->books));
+
+    }
     public function indexByAuthor()
     {
         $books = Book::orderBy('author', 'asc')->paginate(50);

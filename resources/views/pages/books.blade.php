@@ -16,7 +16,9 @@
             </div>
         <hr>
     @else
-        <p>Your Reading List is empty</p>
+        <div class="items mb-5">
+            <p>Your Reading List is empty</p>
+        </div>
     @endif
 
     {{-- Form for adding books --}}
