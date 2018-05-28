@@ -4,7 +4,7 @@
 
 @include('partials.navbar')
 
-        @if(count($books) > 0)
+    @if(count($books) > 0)
             <div class="items mb-5">
                 @foreach($books as $book)
                         <div class="item">
@@ -20,6 +20,7 @@
             <p>Your Reading List is empty</p>
         </div>
     @endif
+
 
     {{-- Form for adding books --}}
     <h1>Add a new book to your list</h1>

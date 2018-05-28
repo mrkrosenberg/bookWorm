@@ -26,8 +26,6 @@ Route::get('/main', 'PagesController@main');
 
 // Books Routes
 
-Route::get('/index', 'BooksController@index');
-
 Route::get('/indexByAuthor', 'BooksController@indexByAuthor');
 
 Route::get('/indexByTitle', 'BooksController@indexByTitle');

@@ -109,7 +109,7 @@ window.addEventListener("mouseup", function (e) {
 });
 
 function updateFocus(e) {
-    focus.style.backgroundImage = 'radial-gradient(circle at ' + e.pageX / window.innerWidth * 100 + '% ' + e.pageY / window.innerHeight * 100 + '%, ' + focusSize;
+    this.focus.style.backgroundImage = 'radial-gradient(circle at ' + e.pageX / window.innerWidth * 100 + '% ' + e.pageY / window.innerHeight * 100 + '%, ' + focusSize;
 };
 
 /***/ }),
