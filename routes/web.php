@@ -17,11 +17,11 @@
 
 // Authentication Routes
 
-// Route::get('/', 'PagesController@main');
-
 Route::get('/', 'PagesController@login');
 
 Route::get('/signup', 'PagesController@signup');
+
+Route::get('/main', 'PagesController@main');
 
 
 // Books Routes

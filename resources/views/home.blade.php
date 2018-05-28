@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -19,5 +19,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+        <div class="header"> 
+            <h1 class="main-title">Welcome to Bookworm</h1>
+            <a href="/indexByAuthor" class="btn--main btn--white btn--animated">build your reading list</a>
+        </div>
 @endsection
