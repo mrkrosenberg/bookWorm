@@ -17,9 +17,9 @@
 
 // Authentication Routes
 
-Route::get('/', 'PagesController@main');
+// Route::get('/', 'PagesController@main');
 
-Route::get('/login', 'PagesController@login');
+Route::get('/', 'PagesController@login');
 
 Route::get('/signup', 'PagesController@signup');
 

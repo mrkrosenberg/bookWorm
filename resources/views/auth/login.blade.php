@@ -49,7 +49,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-4">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
@@ -61,6 +61,15 @@
                             </div>
                         </div>
                     </form>
+                    <div class="container row">
+                        <div class="col-md-8 offset-md-4">
+                            <span> New User?
+                                <a href="/signup" type="btn btn-primary">
+                                  Sign Up Here!  
+                                </a>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

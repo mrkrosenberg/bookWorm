@@ -22,6 +22,7 @@
     <body>
         <div class="landing">
             <div class="focus">
+                @include('partials/app')
                 @yield('content')
             </div>
         </div>
