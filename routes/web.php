@@ -15,7 +15,15 @@
 //     return view('welcome');
 // });
 
+// Authentication Routes
+
 Route::get('/', 'PagesController@main');
+
+
+
+
+// Books Routes
+
 
 Route::get('/indexByAuthor', 'BooksController@indexByAuthor');
 
