@@ -67,7 +67,6 @@ class BooksController extends Controller
         $book->title = $request->title;
         $book->author = $request->author;
         $book->pub_date = $request->pub_date;
-        $book->user_id = auth()->user()->id;
 
         // save image (using intervention/image)
         if ($request->hasFile('file')) {
