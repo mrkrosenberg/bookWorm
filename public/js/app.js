@@ -75,19 +75,6 @@ module.exports = __webpack_require__(2);
 /* 1 */
 /***/ (function(module, exports) {
 
-// require('./bootstrap');
-
-// window.Vue = require('vue');
-
-
-// Vue.component('books', require('./components/Books.vue'));
-// Vue.component('navbar', require('./components/Navbar.vue'));
-// Vue.component('book', require('./components/Book.vue'));
-
-// const app = new Vue({
-//     el: '#app'
-// });
-
 var focus = document.querySelector('.focus');
 
 var focusSize = 'transparent 75px, rgba(0, 0, 0, 0.65) 200px)';
