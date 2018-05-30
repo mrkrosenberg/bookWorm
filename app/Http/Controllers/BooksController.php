@@ -55,13 +55,6 @@ class BooksController extends Controller
             'pub_date' => 'required'
         ]);
 
-        // Book::create([
-        //     'title' => request('title'),
-        //     'author' => request('author'),
-        //     'pub_date' => request('pub_date'),
-        //     'image' => request('file')
-        // ]);
-
         $book = new Book;
 
         $book->title = $request->title;
