@@ -4,17 +4,16 @@
 
     <div class="row">
         <div class="col-md-8">
-            <div class="card card-body">
+            <div class="card card-body book-info">
                 <h3>{{$book->title}}</h3>
                 <p>By: {{$book->author}}</p>
                 <p>Published on: {{$book->pub_date}}</p>
-                    {{-- Form to delete book --}}
-
+                <p>{{$book->notes}}</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card card-body">
-                <h3>
+                    {{-- Form to delete book --}}
                     <form action="/book/delete/{{$book->id}}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
@@ -22,7 +21,7 @@
                         <br/>
                         <button class="btn btn-danger">Remove book from list</button>
                     </form>
-                </h3>
+
             </div>
         </div>
     </div>

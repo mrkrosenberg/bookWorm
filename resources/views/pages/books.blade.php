@@ -17,7 +17,7 @@
         <hr>
     @else
         <div class="card mb-5">
-            <div class="card-body">
+            <div class="card-body book-info">
                 <p>Your Reading List is empty</p>
             </div>
         </div>
@@ -42,6 +42,9 @@
         </div>
         <div class="form-group">
             <input type="text" class="form-control" id="pub_date" name="pub_date" placeholder="Publication Date" required>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name="notes" id="notes" placeholder="Enter Notes Here" id="" cols="30" rows="10"></textarea>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Save Book</button>

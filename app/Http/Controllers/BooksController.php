@@ -60,6 +60,7 @@ class BooksController extends Controller
         $book->title = $request->title;
         $book->author = $request->author;
         $book->pub_date = $request->pub_date;
+        $book->notes = $request->notes;
 
         $book->save();
 
