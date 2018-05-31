@@ -45,7 +45,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
-        </main>
+        {{-- <main class="py-4">
+        </main> --}}
     </div>
 

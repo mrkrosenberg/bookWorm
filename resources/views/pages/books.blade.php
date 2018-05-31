@@ -12,6 +12,8 @@
                         </div>
                 @endforeach
             </div>
+            <a class="btn btn-primary" href="/indexByAuthor">Sort By Author</a>
+            <a class="btn btn-primary" href="/indexByTitle">Sort By Title</a>
         <hr>
     @else
         <div class="card mb-5">
