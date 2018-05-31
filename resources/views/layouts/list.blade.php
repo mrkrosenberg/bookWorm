@@ -23,6 +23,7 @@
     <body>
 
         <div class="container main_content">
+            @include('partials.app')
             @yield('content')
             @include('partials.footer')
         </div>
