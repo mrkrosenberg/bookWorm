@@ -19,6 +19,7 @@
         <div class="card mb-5">
             <div class="card-body book-info">
                 <p>Your Reading List is empty</p>
+                <p>Add a new book below!</p>
             </div>
         </div>
     @endif
