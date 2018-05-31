@@ -2,10 +2,6 @@
 
 @section('content')
 
-    @if($book->image)
-        {{-- using asset helper creates a url --}}
-        <img src="{{ asset('images/' . $book->image) }}" height="400" width="300">
-    @endif
     <div class="card card-body">
         <h3>{{$book->title}}</h3>
         <p>By: {{$book->author}}</p>
@@ -18,8 +14,5 @@
             <button class="btn btn-danger">Remove book from list</button>
         </form>
     </div>
-
-
-    
 
 @endsection
