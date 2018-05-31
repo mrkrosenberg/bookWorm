@@ -5,9 +5,20 @@
     <div class="row">
         <div class="col-md-8">
             <div class="card card-body book-info">
-                <h3>{{$book->title}}</h3>
-                <p>By: {{$book->author}}</p>
-                <p>Published on: {{$book->pub_date}}</p>
+                <table class="table">
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Publication Date</th>
+                    </tr>
+                    <tr>
+                        <td>{{$book->title}}</td>
+                        <td>{{$book->author}}</td>
+                        <td>{{$book->pub_date}}</td>
+                    </tr>
+                </table>
+                <hr>
+                <h6>Notes:</h6>
                 <p>{{$book->notes}}</p>
             </div>
         </div>
