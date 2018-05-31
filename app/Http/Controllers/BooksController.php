@@ -52,7 +52,8 @@ class BooksController extends Controller
         $this->validate(request(), [
             'title' => 'required',
             'author' => 'required',
-            'pub_date' => 'required'
+            'pub_date' => 'required',
+            'notes' => 'required'
         ]);
 
         Book::create([
