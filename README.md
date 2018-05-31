@@ -1,4 +1,3 @@
-** Quick Notice: due to some mix-ups, the main code is found on the newTestBranch in this Github repo
 
 # Bookworm Reading List
 
