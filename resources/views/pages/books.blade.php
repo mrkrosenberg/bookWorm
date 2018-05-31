@@ -44,7 +44,7 @@
             <input type="text" class="form-control" id="pub_date" name="pub_date" placeholder="Publication Date" required>
         </div>
         <div class="form-group">
-            <textarea class="form-control" name="notes" id="notes" placeholder="Enter Notes Here" id="" cols="30" rows="10"></textarea>
+            <textarea class="form-control" name="notes" id="notes" placeholder="Enter Notes Here" cols="30" rows="5" maxlength="190"></textarea>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Save Book</button>
