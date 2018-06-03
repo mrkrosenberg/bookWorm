@@ -63,16 +63,8 @@ class BooksController extends Controller
             'notes' => request('notes'),
         ]);
 
-        // $book = new Book;
 
-        // $book->title = $request->title;
-        // $book->author = $request->author;
-        // $book->pub_date = $request->pub_date;
-        // $book->notes = $request->notes;
-
-        // $book->save();
-
-        return redirect('/indexByAuthor')->with('success', 'Book Added To Your List');
+        return redirect('/indexByAuthor');
 
     }
 
