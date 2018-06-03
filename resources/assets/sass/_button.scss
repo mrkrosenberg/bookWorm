@@ -1,4 +1,4 @@
-.btn--main {
+.btn-main {
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -6,7 +6,6 @@
         padding: 1.5rem 4rem;
         display: inline-block;
         border-radius: 10rem;
-        /* transition property has to be on the initial state */
         transition: all .2s;
         position: relative;
         font-size: 1.6rem;
@@ -21,7 +20,6 @@
     }
 
     &::after {
-        /* after psuedo element MUST contain content and display (can be blank) */
         content: "";
         display: inline-block;
         height: 100%;
@@ -36,7 +34,7 @@
  
 }
 
-.btn--white {
+.btn-white {
     background-color: $color-white;
     color: $color-gray-dark;
     &::after {
@@ -44,12 +42,10 @@
     }
 }
 
-.btn--animated {
+.btn-animated {
     animation: moveInBottom .2s ease-out .2s;
     animation-fill-mode: backwards;
 }
 
-@media screen and (max-width: 630px) {
 
-}
 

@@ -12,17 +12,17 @@
 }
 
 .main-title {
-        color: $color-white;
-        text-transform: uppercase;
-        backface-visibility: hidden;
-        margin-bottom: 6rem;
-        display: block;
-        font-size: 3rem;
-        font-weight: 600;
-        letter-spacing: 3.5rem;
-        animation-name: moveInLeft;
-        animation-duration: 1s;
-        animation-timing-function: ease-out;
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+    display: block;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 
     }
 
@@ -30,7 +30,6 @@
     position: absolute;
     top: 40%;
     left: 50%;
-    /* sets the initial "position" of this element to its center, rather than top left corner */
     transform: translate(-50%, -50%);
     text-align: center;
 }
