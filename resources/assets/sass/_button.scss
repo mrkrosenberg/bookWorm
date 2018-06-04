@@ -1,4 +1,4 @@
-.btn-main {
+.btn--main {
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -34,7 +34,7 @@
  
 }
 
-.btn-white {
+.btn--white {
     background-color: $color-white;
     color: $color-gray-dark;
     &::after {
@@ -42,7 +42,7 @@
     }
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInBottom .2s ease-out .2s;
     animation-fill-mode: backwards;
 }
