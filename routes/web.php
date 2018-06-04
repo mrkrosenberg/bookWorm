@@ -17,11 +17,11 @@
 
 // Authentication Routes
 
+Route::get('/', 'PagesController@home');
+
 Route::get('/login', 'PagesController@login');
 
 Route::get('/signup', 'PagesController@signup');
-
-Route::get('/', 'PagesController@home');
 
 
 // Books Routes
@@ -41,4 +41,4 @@ Route::delete('/book/delete/{id}', 'BooksController@destroy');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
