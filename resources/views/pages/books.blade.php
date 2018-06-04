@@ -12,8 +12,10 @@
                 @foreach($books as $book)
                         <div class="item">
                             <h3 class="title">
-                                <a href="/book/{{$book->id}}">{{$book->title}}</a>
-                                <p>By {{$book->author}}</p>
+                                <a href="/book/{{$book->id}}">{{$book->title}}
+                                <br>
+                                    {{$book->author}}
+                                </a>
                             </h3>
                         </div>
                 @endforeach

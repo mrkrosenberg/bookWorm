@@ -267,6 +267,10 @@ body {
   height: 90vh;
 }
 
+.book-title {
+  color: white;
+}
+
 @-webkit-keyframes moveInBottom {
   0% {
     opacity: 0;
