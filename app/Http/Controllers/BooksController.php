@@ -21,7 +21,7 @@ class BooksController extends Controller
 
     public $books;
 
-    public static function index() {
+    public function index() {
 
         $books = Book::all();
 
