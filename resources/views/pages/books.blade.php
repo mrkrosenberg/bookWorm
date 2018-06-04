@@ -13,6 +13,7 @@
                         <div class="item">
                             <h3 class="title">
                                 <a href="/book/{{$book->id}}">{{$book->title}}</a>
+                                <p>By {{$book->author}}</p>
                             </h3>
                         </div>
                 @endforeach
