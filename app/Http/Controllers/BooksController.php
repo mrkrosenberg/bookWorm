@@ -40,9 +40,7 @@ class BooksController extends Controller
         $books = Book::orderBy('author', 'asc')->paginate(50);
 
         return view('pages.books', compact('books'));
-        // sort($this->books);
 
-        // return view('pages.books', compact('books'));
     }
 
       public function indexByTitle()
