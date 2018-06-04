@@ -49,17 +49,13 @@
                             </div>
                         </div>
 
-                        {{-- <div class="form-group row mb-4">
+                        <div class="form-group row mb-4">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
                             </div>
-                        </div> --}}
+                        </div>
                     </form>
                     <div class="container row">
                         <div class="col-md-8 offset-md-4">
