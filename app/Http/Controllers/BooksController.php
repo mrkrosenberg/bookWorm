@@ -69,8 +69,6 @@ class BooksController extends Controller
             'notes' => 'required'
         ]);
 
-        // save image file as a variable
-        // use variable for the database query
 
         Book::create([
             'title' => request('title'),
