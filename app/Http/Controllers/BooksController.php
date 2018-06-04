@@ -21,11 +21,11 @@ class BooksController extends Controller
 
     public $books;
 
-    public function index() {
+    public static function index() {
 
-        $this->books = Book::all();
+        $books = Book::all();
 
-        return view('pages.books')->with('books', $this->books);
+        return view('pages.books')->with('books', $books);
 
     }
 
