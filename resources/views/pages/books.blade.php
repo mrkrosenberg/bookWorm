@@ -2,7 +2,12 @@
 
 @section('content')
 
+
     @if(count($books) > 0)
+        <div class="container mt-2">
+            <a class="btn btn-primary" href="/indexByAuthor">Sort By Author</a>
+            <a class="btn btn-primary" href="/indexByTitle">Sort By Title</a>
+        </div>
             <div class="items mb-5">
                 @foreach($books as $book)
                         <div class="item">
@@ -12,8 +17,7 @@
                         </div>
                 @endforeach
             </div>
-            <a class="btn btn-primary" href="/indexByAuthor">Sort By Author</a>
-            <a class="btn btn-primary" href="/indexByTitle">Sort By Title</a>
+
         <hr>
     @else
         <div class="card mb-5">

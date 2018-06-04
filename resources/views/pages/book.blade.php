@@ -28,7 +28,7 @@
                     <form action="/book/delete/{{$book->id}}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                        <a class="btn btn-primary mb-5" href="/indexByAuthor">Back to List</a>
+                        <a class="btn btn-primary mb-5" href="/index">Back to List</a>
                         <br/>
                         <button class="btn btn-danger">Remove book from list</button>
                     </form>

@@ -19,6 +19,16 @@ class BooksController extends Controller
         $this->middleware('auth');
     }
 
+    public $books;
+
+    public function index() {
+
+        $this->books = Book::all();
+
+        return view('pages.books')->with('books', $this->books);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -30,6 +40,9 @@ class BooksController extends Controller
         $books = Book::orderBy('author', 'asc')->paginate(50);
 
         return view('pages.books', compact('books'));
+        // sort($this->books);
+
+        // return view('pages.books', compact('books'));
     }
 
       public function indexByTitle()
@@ -56,6 +69,9 @@ class BooksController extends Controller
             'notes' => 'required'
         ]);
 
+        // save image file as a variable
+        // use variable for the database query
+
         Book::create([
             'title' => request('title'),
             'author' => request('author'),
@@ -64,7 +80,7 @@ class BooksController extends Controller
         ]);
 
 
-        return redirect('/indexByAuthor');
+        return redirect('/index');
 
     }
 
@@ -92,6 +108,6 @@ class BooksController extends Controller
     {
         $book = Book::find($id);
         $book->delete();
-        return redirect('/indexByAuthor')->with('success', 'Removed Book From List');
+        return redirect('/index');
     }
 }

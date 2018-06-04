@@ -13,6 +13,7 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
+        // add in new column to table for image - type blob
         Schema::create('books', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
